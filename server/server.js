@@ -5,13 +5,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
-const corsOptions = {
-	origin: [process.env.URL, 'http://localhost:3000']
-}
-
-app.use(cors(corsOptions))
-app.options('*', cors(corsOptions))
-
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
