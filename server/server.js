@@ -15,10 +15,10 @@ app.use(bodyParser.json());
 app.use(require('./routes/index'));
 
 //CARPETA PÚBLICA
-// app.use(express.static(path.resolve(__dirname, '../public/build/')));
+app.use(express.static(__dirname + '/public/'));
 
 //CONEXION A LA DB
-mongoose.connect('mongodb://obed:2guitarras@ds129762.mlab.com:29762/tareas', { useNewUrlParser: true }, (err) => {
+mongoose.connect('mongodb://localhost:27017/tareas', { useNewUrlParser: true }, (err) => {
 	if(err) throw Error;
 	console.log('Base de datos online');
 });
